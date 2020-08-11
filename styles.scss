@@ -1,0 +1,387 @@
+@mixin bg($cover: cover) {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: $cover;
+}
+
+$grey : #696969;
+$white: #FFFFFF;
+$orange: #FFA500;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    color: $white;
+}
+
+#bg-container {
+    @include bg(100% 100%);
+}
+
+.content-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.rgba-container {
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+}
+
+// Navigation
+
+nav {
+    width: 100%;
+    text-transform: uppercase;
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            h1 {
+                font-family: 'Playfair Display', serif;
+                letter-spacing: 3px;
+                margin-left: 15px;
+                font-size: 2rem;
+                text-transform: none;
+            }
+        }
+    }
+}
+
+nav section form {
+    display: flex;
+    flex-direction: column;
+    input {
+        background: transparent;
+        border: 1px white solid;
+        outline: none;
+        height: 25px;
+        margin-top: 3px;
+        padding: 5px;
+        &::placeholder {
+            color: white;
+        }
+    }
+}
+
+nav section:first-of-type {
+    border-bottom: 2px solid $white;
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    display: inline;
+    padding: 0 10px;
+    font-weight: bold;
+    border-right: solid 1px $white;
+    font-size: 0.8rem;
+}
+
+nav li a {
+    color: $white;
+}
+
+li a {
+    text-decoration: none;
+    color: $grey;
+    &:hover {
+        color: $orange;
+        transition: color 300ms;
+    }
+}
+
+// Dropdown Content
+
+.dropdown-menu {
+    position: relative;
+}
+
+.dropdown-content {
+    white-space: nowrap;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+    padding: 10px 10px;
+    line-height: 30px;
+    border-top: 2px solid $white;
+    &:hover {
+        display: block;
+    }
+    ul {
+        list-style: none;
+        &:first-child {
+            padding-top: 20px;
+        }
+    }
+}
+
+// Pop up contact form
+
+.form-popup {
+    display: none;
+    position: absolute;
+    top: 15%;
+    min-width: 600px;
+    background-color: #FEFFEF;
+    padding: 20px 20px 40px 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            min-height: 40px;
+            font-size: 1.2rem;
+        }
+    }
+    h2 {
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+    button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: inline-block;
+        width: 25px;
+        background: transparent;
+        border: none;
+        outline: transparent;
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+
+// Featured Retreats Header
+
+main #retreats article:first-of-type {
+    height: 240px;
+    color: $grey;
+} 
+
+
+main article:first-of-type > div:first-of-type {
+    padding: 20px;
+    border-bottom: solid #c0c0c0 1px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    > .content-container {
+        display: flex;
+        justify-content: center;
+    }
+    ul li {
+        padding: 10px;
+        list-style: none;
+        display: inline;
+    }
+}
+
+.content-header {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    height: 185px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: $grey;
+}
+
+// Featured Retreats Sections
+
+main #retreats article:nth-of-type(2) {
+    background: url(/pictures/philippines.jpg);
+    @include bg;
+}
+
+main #retreats article:nth-of-type(3) {
+    background: url(/pictures/croatia.jpg);
+    @include bg;
+}
+
+main #retreats article:nth-of-type(4) {
+    background: url(/pictures/nature4.jpg);
+    @include bg;
+}
+
+
+
+// Grid Journal
+
+main .grid-journal {
+    margin-bottom: 240px;
+    div {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+        column-gap: 4%;
+        row-gap: 40px;
+        height: 1200px;
+        article {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-transform: uppercase;
+            padding: 20px;
+            h3 {
+                font-size: 1.3rem;
+                letter-spacing: 3px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 2.6rem;
+                text-align: center;
+                font-family: 'Noto Sans TC', sans-serif;
+            }
+        }
+    }
+} 
+
+
+// Subscribe form
+
+.subscribe-form {
+    background: url(/pictures/beach.jpg);
+    @include bg;
+    margin-bottom: 60px;
+}
+
+.form-container {
+    margin-top: 60px;
+    max-width: 360px;
+    float: right;
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.7rem;
+        letter-spacing: 2px;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    form {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        input {
+            background-color: rgba(0,0,0,0.1);
+            outline: none;
+            border: solid 3px $white;
+            color: $white;
+            margin-top: 25px;
+            height: 50px;
+            font-size: 1.3rem;
+            padding: 0 10px;
+            transition: 400ms;
+            &::placeholder {
+                color: $white;
+            }
+            &:last-of-type:hover {
+                cursor: pointer;
+                background-color: $white;
+                color: $grey;
+            } 
+        }
+    }
+}
+
+// Footer
+
+footer {
+    background-color: #424242;
+    height: 240px;
+    section:nth-of-type(1) {
+        border-bottom: 1px solid #595958;
+        height: 60px;
+    }
+    section:nth-of-type(2) {
+        border-bottom: 1px solid #595958;
+        height: 120px;
+    }
+    section:nth-of-type(3) {
+        border-bottom: 1px solid #595958;
+        height: 60px;
+    }
+}
+
+footer li a {
+    color: $white;
+}
+
+.follow-area div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.follow-area .content-container div:first-of-type {
+    border-left: 1px solid #595958;
+    padding-left: 20px;
+    label {
+        color: grey;
+    }
+    input {
+        background-color: transparent;
+        outline: none;
+        border: 1px $white solid;
+        height: 25px;
+        padding-left: 10px;
+        margin-left: 20px;
+        &::placeholder {
+            color: $white;
+        } 
+    }
+}
+
+.follow-area .content-container div:last-of-type {
+    padding-left: 20px;
+    border-left: 1px solid #595958;
+}
+
+
+.link-area div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 100%;
+    ul {
+        list-style: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        li:first-child {
+            color: grey;
+        }
+    }
+}
