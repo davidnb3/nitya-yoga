@@ -343,7 +343,6 @@ main .grid-journal div article p {
 .form-container h3 {
   text-transform: uppercase;
   margin-bottom: 25px;
-  font-weight: 900;
   font-family: 'Roboto', sans-serif;
   font-size: 2.7rem;
   letter-spacing: 2px;
@@ -479,13 +478,10 @@ footer li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 60px;
+  padding: 10px 60px;
   height: 100%;
 }
 
@@ -493,9 +489,39 @@ footer li a {
   list-style: none;
   text-transform: uppercase;
   font-size: 0.9rem;
+  line-height: 25px;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .link-area div ul li:first-child {
+  font-family: 'Mulish', sans-serif;
   color: grey;
+}
+
+footer section:last-of-type div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.7rem;
+  border-left: 1px solid #595958;
+  height: 100%;
+}
+
+footer section:last-of-type div span {
+  padding-left: 20px;
+  color: grey;
+  margin-right: 20px;
+}
+
+footer section:last-of-type div ul {
+  list-style: none;
+}
+
+footer section:last-of-type div ul li {
+  display: inline;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
