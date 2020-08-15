@@ -1,3 +1,7 @@
+
+/**** COMPONENTS ****/
+
+
 @mixin bg($cover: cover) {
     height: 100vh;
     background-repeat: no-repeat;
@@ -43,7 +47,9 @@ html, body {
     padding: 10px;
 }
 
-// Navigation
+
+
+/**** NAVIGATION ****/
 
 nav {
     width: 100%;
@@ -109,7 +115,9 @@ li a {
     }
 }
 
-// Dropdown Content
+
+
+/**** DROP-DOWN MENU ****/
 
 .dropdown-menu {
     position: relative;
@@ -135,7 +143,9 @@ li a {
     }
 }
 
-// Pop up contact form
+
+
+/**** POP-UP SUBSCRIBE FORM ****/
 
 .form-popup {
     display: none;
@@ -179,7 +189,8 @@ li a {
 }
 
 
-// Featured Retreats Header
+
+/**** FEATURED RETREATS HEADER ****/
 
 main #retreats article:first-of-type {
     height: 240px;
@@ -214,7 +225,9 @@ main article:first-of-type > div:first-of-type {
     color: $grey;
 }
 
-// Featured Retreats Sections
+
+
+/**** FEATURED RETREATS SECTION ****/
 
 main #retreats article:nth-of-type(2) {
     background: url(/pictures/philippines.jpg);
@@ -231,9 +244,27 @@ main #retreats article:nth-of-type(4) {
     @include bg;
 }
 
+.retreat-box-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.retreat-box {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 60px;
+    font-size: 1.5rem;
+    h3 {
+        font-size: 3.5rem;
+    }
+}
 
 
-// Grid Journal
+
+/**** GRID JOURNAL SECTION ****/
 
 main .grid-journal {
     margin-bottom: 240px;
@@ -266,7 +297,8 @@ main .grid-journal {
 } 
 
 
-// Subscribe form
+
+/**** SUBSCRIBE FORM SECTION ****/
 
 .subscribe-form {
     background: url(/pictures/beach.jpg);
@@ -314,7 +346,9 @@ main .grid-journal {
     }
 }
 
-// Footer
+
+
+/**** FOOTER ****/
 
 footer {
     background-color: #424242;
@@ -387,7 +421,7 @@ footer li a {
     }
 }
 
-footer section:last-of-type div {
+footer .info-section div {
     display: flex;
     align-items: center;
     font-size: 0.7rem;

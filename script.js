@@ -69,3 +69,37 @@ function slideShow() {
 };
 
 slideShow();
+
+
+// Slideshow Text
+
+function setSlideshowText() {
+    let header = [
+        'Handcrafted Retreats',
+        'Healing Retreats',
+        'Retreat Centers',
+        'Dive In'
+    ];
+
+    let slideshowText1 = document.getElementById('slideshow-text-1');
+
+} 
+
+setSlideshowText();
+
+
+
+
+
+    /** let para1 = document.createElement('p').textContent = 'Every single one of \
+            our retreats is handcrafted by our small team of wellness travel experts';
+
+
+    let para2 = document.createElement('p').textContent = 'We seek out & indulge \
+        in the most healing & transformative places on earth';
+
+    let para3 = document.createElement('p').textContent = 'We search the world for the most \
+        breathtaking locations and accommodations you could dream of';
+
+    let para4 = document.createElement('p').textContent = 'Hot springs. Glaciers. Rivers. Oceans. \
+        Cliff jumping. Paddle Boarding. In water we find ourselves'; **/
