@@ -71,9 +71,50 @@ function slideShow() {
 slideShow();
 
 
-// Slideshow Text
 
-function setSlideshowText() {
+// Journal Read Me Text
+
+
+function changeJournalText() {
+    let journalBox = document.querySelectorAll('.journal-box');
+    let journalBoxHeader = document.querySelectorAll('.journal-header');
+
+    for (let i = 0; i < journalBox.length; i++) {
+        journalBox[i].addEventListener('mouseover', function() {
+            journalBoxHeader[i].innerHTML = '[ Read more ]';
+            journalBoxHeader[i].style.color = '#FFA500';
+        });
+        journalBox[i].addEventListener('mouseout', function() {
+            journalBoxHeader[i].innerHTML = 'The journal';
+            journalBoxHeader[i].style.color = 'white';
+        })
+    }
+
+}
+
+changeJournalText();
+
+
+/////////////////////////////
+
+
+
+
+function slideShowTextLoop() {
+
+    let paras = new Array();
+    paras[0] = 'Every single one of \
+    our retreats is handcrafted by our small team of wellness travel experts';
+
+    paras[1] = 'We seek out & indulge \
+    in the most healing & transformative places on earth';
+
+    paras[2] = 'We search the world for the most \
+    breathtaking locations and accommodations you could dream of';
+
+    paras[3] = 'Hot springs. Glaciers. Rivers. Oceans. \
+    Cliff jumping. Paddle Boarding. In water we find ourselves';
+
     let header = [
         'Handcrafted Retreats',
         'Healing Retreats',
@@ -81,25 +122,18 @@ function setSlideshowText() {
         'Dive In'
     ];
 
-    let slideshowText1 = document.getElementById('slideshow-text-1');
-
-} 
-
-setSlideshowText();
+    let counter = 0;
 
 
 
+    if (counter > 4) {
+        counter = 0;
+    };
+    
+    document.getElementById('slideshow-header').innerHTML = header[counter];
+    document.getElementById('slideshow-para').innerHTML = paras[counter];
+    counter++;
+    setTimeout(slideShowTextLoop, 6000);
+}
 
-
-    /** let para1 = document.createElement('p').textContent = 'Every single one of \
-            our retreats is handcrafted by our small team of wellness travel experts';
-
-
-    let para2 = document.createElement('p').textContent = 'We seek out & indulge \
-        in the most healing & transformative places on earth';
-
-    let para3 = document.createElement('p').textContent = 'We search the world for the most \
-        breathtaking locations and accommodations you could dream of';
-
-    let para4 = document.createElement('p').textContent = 'Hot springs. Glaciers. Rivers. Oceans. \
-        Cliff jumping. Paddle Boarding. In water we find ourselves'; **/
+slideShowTextLoop();
