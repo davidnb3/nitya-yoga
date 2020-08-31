@@ -25,6 +25,8 @@ let imgArray = [
 ];
 
 
+
+
 // Dropdown-menu on mouseover
 
 for (let i = 0; i < dropDownLink.length; i++) {
@@ -41,11 +43,13 @@ for (let i = 0; i < dropDownLink.length; i++) {
             dropDownContent[i].classList.remove('show');
             dropDownContent[i].classList.add('hidden');
         }, 200);
-    })
+    });
 };
 
 
-// Thank you for subscribing message
+
+
+// Navigation 'Thank you for subscribing' message
 
 subscribeForm.addEventListener('submit', function() {
     event.preventDefault()
@@ -53,7 +57,10 @@ subscribeForm.addEventListener('submit', function() {
     newParagraph.textContent = 'Thank you for subscribing!';
     newParagraph.style.fontSize = '0.8rem';
     subscribeForm.appendChild(newParagraph);
-})
+});
+
+
+
 
 // Background image animation
 
@@ -63,6 +70,7 @@ let imgDuration = 6000;
 let bgContainer = document.getElementById('bg-container');
 
 function slideShow() {
+
     bgContainer.style.backgroundImage = 'url(' + imgArray[curIndex % 4] + ')';
     curIndex++;
     setTimeout("slideShow()", imgDuration);
@@ -72,8 +80,50 @@ slideShow();
 
 
 
-// Journal Read Me Text
 
+// Picture Slideshow Text
+
+let para = new Array();
+    para[0] = 'Every single one of \
+    our retreats is handcrafted by our small team of wellness travel experts';
+
+    para[1] = 'We seek out & indulge \
+    in the most healing & transformative places on earth';
+
+    para[2] = 'We search the world for the most \
+    breathtaking locations and accommodations you could dream of';
+
+    para[3] = 'Hot springs. Glaciers. Rivers. Oceans. \
+    Cliff jumping. Paddle Boarding. In water we find ourselves';
+
+let header = [
+        'Handcrafted Retreats',
+        'Healing Retreats',
+        'Retreat Centers',
+        'Dive In'
+    ];
+
+let counter = 0;
+
+
+
+function slideShowTextLoop() {
+
+    if (counter >= 4) {
+        counter = 0;
+    };
+    document.getElementById('slideshow-header').innerHTML = header[counter];
+    document.getElementById('slideshow-para').innerHTML = para[counter];
+    counter++;
+    setTimeout(slideShowTextLoop, 6000);
+}
+
+slideShowTextLoop();
+
+
+
+
+// Journal Read Me Text
 
 function changeJournalText() {
     let journalBox = document.querySelectorAll('.journal-box');
@@ -87,53 +137,76 @@ function changeJournalText() {
         journalBox[i].addEventListener('mouseout', function() {
             journalBoxHeader[i].innerHTML = 'The journal';
             journalBoxHeader[i].style.color = 'white';
-        })
-    }
+        });
+    };
 
-}
+};
 
 changeJournalText();
 
 
-/////////////////////////////
+
+
+// Smooth scrolling functions
+
+function scrollToRetreatSection() {
+    document.getElementById('content-header').scrollIntoView({
+        behavior: 'smooth'
+    });
+};
+
+function scrollToJournalSection() {
+    document.getElementById('journal').scrollIntoView({
+        behavior: 'smooth'
+    });
+};
+
+function scrollToConnectSection() {
+    document.getElementById('connect').scrollIntoView({
+        behavior: 'smooth'
+    });
+};
 
 
 
 
-function slideShowTextLoop() {
+// Fixed navigation onscroll
 
-    let paras = new Array();
-    paras[0] = 'Every single one of \
-    our retreats is handcrafted by our small team of wellness travel experts';
+window.onscroll = function() {fixNavOnScroll()};
 
-    paras[1] = 'We seek out & indulge \
-    in the most healing & transformative places on earth';
+const fixedNavbar = document.getElementById('fixed-nav-onscroll');
 
-    paras[2] = 'We search the world for the most \
-    breathtaking locations and accommodations you could dream of';
+const navPosition = fixedNavbar.offsetTop;
 
-    paras[3] = 'Hot springs. Glaciers. Rivers. Oceans. \
-    Cliff jumping. Paddle Boarding. In water we find ourselves';
-
-    let header = [
-        'Handcrafted Retreats',
-        'Healing Retreats',
-        'Retreat Centers',
-        'Dive In'
-    ];
-
-    let counter = 0;
-
-
-
-    if (counter > 4) {
-        counter = 0;
+function fixNavOnScroll() {
+    if (window.pageYOffset > navPosition) {
+        fixedNavbar.classList.add('fixed-nav');
+        document.getElementById('content-header').style.paddingTop = '110px';
+    } else {
+        fixedNavbar.classList.remove('fixed-nav');
+        document.getElementById('content-header').style.paddingTop = '0';
     };
-    
-    document.getElementById('slideshow-header').innerHTML = header[counter];
-    document.getElementById('slideshow-para').innerHTML = paras[counter];
-    counter++;
-    setTimeout(slideShowTextLoop, 6000);
-}
+};
 
-slideShowTextLoop();
+
+
+
+// Change date color when hovering over featured retreat
+
+const retreatTextbox = document.querySelectorAll('.retreat-box');
+
+for (let i = 0; i < retreatTextbox.length; i++) {
+    const date = document.querySelectorAll('.date');
+    
+    retreatTextbox[i].addEventListener('mouseover', function() {
+        for (let i = 0; i < date.length; i++) {
+            date[i].style.color = 'orange';
+        };
+    });
+
+    retreatTextbox[i].addEventListener('mouseout', function() {
+        for (let i = 0; i < date.length; i++) {
+            date[i].style.color = 'white';
+        };
+    });
+};

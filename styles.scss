@@ -58,10 +58,12 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        div {
+        div a {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            text-decoration: none;
+            color: $white;
             h1 {
                 font-family: 'Playfair Display', serif;
                 letter-spacing: 3px;
@@ -117,6 +119,70 @@ li a {
 
 
 
+/**** SLIDESHOW TEXT ****/
+
+.find-retreat-container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    width: 380px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+    span {
+        margin-bottom: 25px;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 3px;
+    }
+    ul li {
+        display: inline;
+        transition: background-color 400ms;
+        &:hover {
+            background-color: $orange;
+        }
+    }
+}
+
+.retreat-icons li {
+    background: rgba(0,0,0,0.3);
+    border: solid $white 1px;
+    padding: 3px 6px 0px 6px;
+    border-radius: 100%;
+    margin: 0 15px;
+    a {
+        
+    }
+    img {
+        width: 18px;
+        
+    }
+}
+
+#slideshow-text {
+    width: 380px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+    #slideshow-header {
+        margin-bottom: 25px;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    #slideshow-para {
+        line-height: 30px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+
+
+
+
+
 /**** DROP-DOWN MENU ****/
 
 .dropdown-menu {
@@ -145,51 +211,6 @@ li a {
 
 
 
-/**** POP-UP SUBSCRIBE FORM ****/
-
-.form-popup {
-    display: none;
-    position: absolute;
-    top: 15%;
-    min-width: 600px;
-    background-color: #FEFFEF;
-    padding: 20px 20px 40px 20px;
-    border-radius: 5px;
-    border: 2px solid black;
-    form {
-        display: flex;
-        flex-direction: column;
-        label {
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-        input, textarea {
-            min-height: 40px;
-            font-size: 1.2rem;
-        }
-    }
-    h2 {
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-    }
-    button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: inline-block;
-        width: 25px;
-        background: transparent;
-        border: none;
-        outline: transparent;
-        img {
-            width: 25px;
-            height: 25px;
-        }
-    }
-}
-
-
-
 /**** FEATURED RETREATS HEADER ****/
 
 main #retreats article:first-of-type {
@@ -198,11 +219,12 @@ main #retreats article:first-of-type {
 } 
 
 
-main article:first-of-type > div:first-of-type {
+main article .second-nav {
     padding: 20px;
     border-bottom: solid #c0c0c0 1px;
     text-transform: uppercase;
     font-size: 0.7rem;
+    background-color: $white;
     > .content-container {
         display: flex;
         justify-content: center;
@@ -223,9 +245,14 @@ main article:first-of-type > div:first-of-type {
     font-size: 0.8rem;
     letter-spacing: 2px;
     color: $grey;
+    font-family: 'Open Sans', sans-serif;
 }
 
-
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
 /**** FEATURED RETREATS SECTION ****/
 
@@ -262,10 +289,6 @@ main #retreats article:nth-of-type(4) {
     border-bottom: solid 2px $white;
     h3 {
         font-size: 3.5rem;
-    }
-    span:last-of-type:hover {
-            color: $orange;
-            transition: color 300ms;
     }
 }
 
@@ -317,7 +340,6 @@ main .grid-journal {
 .subscribe-form {
     background: url(/pictures/beach.jpg);
     @include bg;
-    margin-bottom: 60px;
 }
 
 .form-container {

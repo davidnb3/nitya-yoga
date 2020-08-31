@@ -56,7 +56,7 @@ nav section {
           justify-content: space-between;
 }
 
-nav section div {
+nav section div a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,9 +64,11 @@ nav section div {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10px;
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
-nav section div h1 {
+nav section div a h1 {
   font-family: 'Playfair Display', serif;
   letter-spacing: 3px;
   margin-left: 15px;
@@ -137,6 +139,81 @@ li a:hover {
   transition: color 300ms;
 }
 
+/**** SLIDESHOW TEXT ****/
+.find-retreat-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 380px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.find-retreat-container span {
+  margin-bottom: 25px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 3px;
+}
+
+.find-retreat-container ul li {
+  display: inline;
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
+}
+
+.find-retreat-container ul li:hover {
+  background-color: #FFA500;
+}
+
+.retreat-icons li {
+  background: rgba(0, 0, 0, 0.3);
+  border: solid #FFFFFF 1px;
+  padding: 3px 6px 0px 6px;
+  border-radius: 100%;
+  margin: 0 15px;
+}
+
+.retreat-icons li img {
+  width: 18px;
+}
+
+#slideshow-text {
+  width: 380px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#slideshow-text #slideshow-header {
+  margin-bottom: 25px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+#slideshow-text #slideshow-para {
+  line-height: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 /**** DROP-DOWN MENU ****/
 .dropdown-menu {
   position: relative;
@@ -165,73 +242,21 @@ li a:hover {
   padding-top: 20px;
 }
 
-/**** POP-UP SUBSCRIBE FORM ****/
-.form-popup {
-  display: none;
-  position: absolute;
-  top: 15%;
-  min-width: 600px;
-  background-color: #FEFFEF;
-  padding: 20px 20px 40px 20px;
-  border-radius: 5px;
-  border: 2px solid black;
-}
-
-.form-popup form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.form-popup form label {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.form-popup form input, .form-popup form textarea {
-  min-height: 40px;
-  font-size: 1.2rem;
-}
-
-.form-popup h2 {
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-}
-
-.form-popup button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: inline-block;
-  width: 25px;
-  background: transparent;
-  border: none;
-  outline: transparent;
-}
-
-.form-popup button img {
-  width: 25px;
-  height: 25px;
-}
-
 /**** FEATURED RETREATS HEADER ****/
 main #retreats article:first-of-type {
   height: 240px;
   color: #696969;
 }
 
-main article:first-of-type > div:first-of-type {
+main article .second-nav {
   padding: 20px;
   border-bottom: solid #c0c0c0 1px;
   text-transform: uppercase;
   font-size: 0.7rem;
+  background-color: #FFFFFF;
 }
 
-main article:first-of-type > div:first-of-type > .content-container {
+main article .second-nav > .content-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,7 +265,7 @@ main article:first-of-type > div:first-of-type > .content-container {
           justify-content: center;
 }
 
-main article:first-of-type > div:first-of-type ul li {
+main article .second-nav ul li {
   padding: 10px;
   list-style: none;
   display: inline;
@@ -261,6 +286,13 @@ main article:first-of-type > div:first-of-type ul li {
   font-size: 0.8rem;
   letter-spacing: 2px;
   color: #696969;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 /**** FEATURED RETREATS SECTION ****/
@@ -309,12 +341,6 @@ main #retreats article:nth-of-type(4) {
 
 .retreat-box h3 {
   font-size: 3.5rem;
-}
-
-.retreat-box span:last-of-type:hover {
-  color: #FFA500;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 .line-container {
@@ -384,7 +410,6 @@ main .grid-journal div article a p {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 60px;
 }
 
 .form-container {
