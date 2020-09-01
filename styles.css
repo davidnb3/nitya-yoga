@@ -1,4 +1,5 @@
 /**** COMPONENTS ****/
+@use 'mobile.scss';
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +14,33 @@ html, body {
   color: #FFFFFF;
 }
 
+@media screen and (max-width: 420px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
 #bg-container {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
+@media screen and (max-width: 800px) {
+  #bg-container {
+    background-size: cover;
+  }
+}
+
 .content-container {
   max-width: 1100px;
   margin: auto;
+}
+
+@media screen and (max-width: 1150px) {
+  .content-container {
+    padding: 0 20px;
+  }
 }
 
 .hidden {
@@ -86,6 +105,12 @@ nav section form {
           flex-direction: column;
 }
 
+@media screen and (max-width: 500px) {
+  nav section form {
+    display: none;
+  }
+}
+
 nav section form input {
   background: transparent;
   border: 1px white solid;
@@ -143,7 +168,7 @@ li a:hover {
 .find-retreat-container {
   padding-top: 80px;
   padding-bottom: 80px;
-  width: 380px;
+  max-width: 380px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,7 +213,7 @@ li a:hover {
 }
 
 #slideshow-text {
-  width: 380px;
+  max-width: 380px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -221,7 +246,7 @@ li a:hover {
 
 .dropdown-content {
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 0;
   margin-top: 10px;
@@ -287,6 +312,24 @@ main article .second-nav ul li {
   letter-spacing: 2px;
   color: #696969;
   font-family: 'Open Sans', sans-serif;
+}
+
+.content-header img {
+  width: 400px;
+  height: 120px;
+}
+
+@media screen and (max-width: 1092px) {
+  .content-header img {
+    width: 100px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 534px) {
+  .content-header img {
+    display: none;
+  }
 }
 
 .fixed-nav {
@@ -355,7 +398,7 @@ main #retreats article:nth-of-type(4) {
 
 /**** GRID JOURNAL SECTION ****/
 main .grid-journal {
-  margin-bottom: 240px;
+  margin-bottom: 160px;
 }
 
 main .grid-journal div {
@@ -368,7 +411,16 @@ main .grid-journal div {
   -webkit-column-gap: 4%;
           column-gap: 4%;
   row-gap: 40px;
-  height: 1200px;
+  min-height: 1200px;
+}
+
+@media screen and (max-width: 700px) {
+  main .grid-journal div {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: (minmax(426px, auto))[6];
+        grid-template-rows: repeat(6, minmax(426px, auto));
+  }
 }
 
 main .grid-journal div article a {
@@ -402,6 +454,12 @@ main .grid-journal div article a p {
   font-size: 2.6rem;
   text-align: center;
   font-family: 'Noto Sans TC', sans-serif;
+}
+
+@media screen and (max-width: 950px) {
+  main .grid-journal div article a p {
+    font-size: 2rem;
+  }
 }
 
 /**** SUBSCRIBE FORM SECTION ****/
@@ -479,7 +537,6 @@ main .grid-journal div article a p {
 /**** FOOTER ****/
 footer {
   background-color: #424242;
-  height: 240px;
 }
 
 footer section:nth-of-type(1) {
@@ -489,7 +546,7 @@ footer section:nth-of-type(1) {
 
 footer section:nth-of-type(2) {
   border-bottom: 1px solid #595958;
-  height: 120px;
+  min-height: 120px;
 }
 
 footer section:nth-of-type(3) {
@@ -562,6 +619,16 @@ footer li a {
           justify-content: space-between;
   padding: 10px 60px;
   height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .link-area div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
 }
 
 .link-area div ul {

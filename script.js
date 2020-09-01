@@ -1,23 +1,23 @@
 
 
-let dropDownContent = document.getElementsByClassName('dropdown-content');
-let dropDownLink = document.getElementsByClassName('dropdown-link');
-let popupButton = document.getElementById('popup-button');
-let contactFormWindow = document.getElementById('contact-form');
-let closeFormButton = document.getElementById('close-button');
-let subscribeForm = document.getElementById('subscribe-form');
-let subscribeInput = document.getElementById('subscribe-input');
+const dropDownContent = document.getElementsByClassName('dropdown-content');
+const dropDownLink = document.getElementsByClassName('dropdown-link');
+const popupButton = document.getElementById('popup-button');
+const contactFormWindow = document.getElementById('contact-form');
+const closeFormButton = document.getElementById('close-button');
+const subscribeForm = document.getElementById('subscribe-form');
+const subscribeInput = document.getElementById('subscribe-input');
 
-let dropDownAnimation = [
+const dropDownAnimation = [
     {display: 'none', opacity: 0},
     {display: 'block', opacity: 0},
     {display: 'block', opacity: 1}
 ];
-let dropDownTiming = {
+const dropDownTiming = {
     duration: 400,
 };
 
-let imgArray = [
+const imgArray = [
     '/gallery/mountains.jpg',
     '/gallery/nature.jpeg',
     '/gallery/nature1.jpg',
@@ -83,7 +83,7 @@ slideShow();
 
 // Picture Slideshow Text
 
-let para = new Array();
+const para = new Array();
     para[0] = 'Every single one of \
     our retreats is handcrafted by our small team of wellness travel experts';
 
@@ -96,7 +96,7 @@ let para = new Array();
     para[3] = 'Hot springs. Glaciers. Rivers. Oceans. \
     Cliff jumping. Paddle Boarding. In water we find ourselves';
 
-let header = [
+const header = [
         'Handcrafted Retreats',
         'Healing Retreats',
         'Retreat Centers',
@@ -126,8 +126,8 @@ slideShowTextLoop();
 // Journal Read Me Text
 
 function changeJournalText() {
-    let journalBox = document.querySelectorAll('.journal-box');
-    let journalBoxHeader = document.querySelectorAll('.journal-header');
+    const journalBox = document.querySelectorAll('.journal-box');
+    const journalBoxHeader = document.querySelectorAll('.journal-header');
 
     for (let i = 0; i < journalBox.length; i++) {
         journalBox[i].addEventListener('mouseover', function() {
