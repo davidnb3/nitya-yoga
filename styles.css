@@ -1,5 +1,4 @@
 /**** COMPONENTS ****/
-@use 'mobile.scss';
 * {
   margin: 0;
   padding: 0;
@@ -340,21 +339,21 @@ main article .second-nav ul li {
 
 /**** FEATURED RETREATS SECTION ****/
 main #retreats article:nth-of-type(2) {
-  background: url(/pictures/philippines.jpeg);
+  background: url(pictures/philippines.jpeg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 main #retreats article:nth-of-type(3) {
-  background: url(/pictures/croatia.jpeg);
+  background: url(pictures/croatia.jpeg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 main #retreats article:nth-of-type(4) {
-  background: url(/pictures/nature4.jpeg);
+  background: url(pictures/nature4.jpeg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -464,7 +463,7 @@ main .grid-journal div article a p {
 
 /**** SUBSCRIBE FORM SECTION ****/
 .subscribe-form {
-  background: url(/pictures/beach.jpg);
+  background: url(pictures/beach.jpg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;

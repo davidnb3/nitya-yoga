@@ -1,8 +1,6 @@
 
 /**** COMPONENTS ****/
 
-@use 'mobile.scss';
-
 @mixin bg($cover: cover) {
     height: 100vh;
     background-repeat: no-repeat;
@@ -278,17 +276,17 @@ main article .second-nav {
 /**** FEATURED RETREATS SECTION ****/
 
 main #retreats article:nth-of-type(2) {
-    background: url(/pictures/philippines.jpeg);
+    background: url(pictures/philippines.jpeg);
     @include bg;
 }
 
 main #retreats article:nth-of-type(3) {
-    background: url(/pictures/croatia.jpeg);
+    background: url(pictures/croatia.jpeg);
     @include bg;
 }
 
 main #retreats article:nth-of-type(4) {
-    background: url(/pictures/nature4.jpeg);
+    background: url(pictures/nature4.jpeg);
     @include bg;
 }
 
@@ -366,7 +364,7 @@ main .grid-journal {
 /**** SUBSCRIBE FORM SECTION ****/
 
 .subscribe-form {
-    background: url(/pictures/beach.jpg);
+    background: url(pictures/beach.jpg);
     @include bg;
 }
 

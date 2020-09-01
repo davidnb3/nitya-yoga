@@ -18,10 +18,10 @@ const dropDownTiming = {
 };
 
 const imgArray = [
-    '/gallery/mountains.jpg',
-    '/gallery/nature.jpeg',
-    '/gallery/nature1.jpg',
-    '/gallery/sea.jpeg'
+    'gallery/mountains.jpg',
+    'gallery/nature.jpeg',
+    'gallery/nature1.jpg',
+    'gallery/sea.jpeg'
 ];
 
 
