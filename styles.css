@@ -233,7 +233,7 @@ li a:hover {
 @media screen and (max-width: 500px) {
   .find-retreat-container {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 }
 

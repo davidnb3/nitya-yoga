@@ -29,24 +29,31 @@ const imgArray = [
 
 // Dropdown-menu on mouseover
 
-for (let i = 0; i < dropDownLink.length; i++) {
-    dropDownLink[i].addEventListener('mouseover', function() {
-            dropDownContent[i].animate(
-                dropDownAnimation,
-                dropDownTiming
-            );
-            dropDownContent[i].classList.add('show');
-            dropDownContent[i].classList.remove('hidden');
-    });
-    dropDownLink[i].addEventListener('mouseout', function() {
-        setTimeout(function() {
-            dropDownContent[i].classList.remove('show');
-            dropDownContent[i].classList.add('hidden');
-        }, 200);
-    });
-};
+function setDropdownMenu() {
+    if (mobileView.matches) {
+        for (let i = 0; i < dropDownLink.length; i++) {
+            dropDownLink[i].addEventListener('mouseover', function() {
+                    dropDownContent[i].animate(
+                        dropDownAnimation,
+                        dropDownTiming
+                    );
+                    dropDownContent[i].classList.add('show');
+                    dropDownContent[i].classList.remove('hidden');
+            });
+            dropDownLink[i].addEventListener('mouseout', function() {
+                setTimeout(function() {
+                    dropDownContent[i].classList.remove('show');
+                    dropDownContent[i].classList.add('hidden');
+                }, 200);
+            });
+        };
+    }
+}
 
 
+let mobileView = window.matchMedia('(min-width: 500px)');
+setDropdownMenu();
+mobileView.addListener(setDropdownMenu);
 
 
 // Responsive menu when clicking nav-icon
