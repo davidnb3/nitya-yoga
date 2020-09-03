@@ -148,6 +148,29 @@ nav section:first-of-type {
   font-size: 0.8rem;
 }
 
+@media screen and (max-width: 500px) {
+  .nav-item {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+.responsive-item {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .responsive-item {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
 nav li a {
   color: #FFFFFF;
 }
@@ -161,6 +184,30 @@ li a:hover {
   color: #FFA500;
   -webkit-transition: color 300ms;
   transition: color 300ms;
+}
+
+@media screen and (max-width: 500px) {
+  .title-section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    text-align: center;
+    line-height: 30px;
+  }
+  .desktop-nav.responsive {
+    display: block;
+  }
+  .desktop-item {
+    display: block;
+    border: none;
+    padding: 0;
+  }
 }
 
 /**** SLIDESHOW TEXT ****/
@@ -181,6 +228,13 @@ li a:hover {
           justify-content: center;
   text-align: center;
   font-size: 1.3rem;
+}
+
+@media screen and (max-width: 500px) {
+  .find-retreat-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .find-retreat-container span {
@@ -280,6 +334,12 @@ main article .second-nav {
   background-color: #FFFFFF;
 }
 
+@media screen and (max-width: 500px) {
+  main article .second-nav {
+    padding: 20px 0px;
+  }
+}
+
 main article .second-nav > .content-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -293,6 +353,12 @@ main article .second-nav ul li {
   padding: 10px;
   list-style: none;
   display: inline;
+}
+
+@media screen and (max-width: 500px) {
+  main article .second-nav ul li {
+    padding: 5px;
+  }
 }
 
 .content-header {
@@ -553,6 +619,12 @@ footer section:nth-of-type(3) {
   height: 60px;
 }
 
+@media screen and (max-width: 500px) {
+  footer .content-container {
+    padding: 0 5px;
+  }
+}
+
 footer li a {
   color: #FFFFFF;
 }
@@ -588,6 +660,13 @@ footer li a {
   margin-left: 20px;
 }
 
+@media screen and (max-width: 500px) {
+  .follow-area .content-container div:first-of-type input {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
 .follow-area .content-container div:first-of-type input::-webkit-input-placeholder {
   color: #FFFFFF;
 }
@@ -607,6 +686,12 @@ footer li a {
 .follow-area .content-container div:last-of-type {
   padding-left: 20px;
   border-left: 1px solid #595958;
+}
+
+@media screen and (max-width: 500px) {
+  .follow-area .content-container div:last-of-type {
+    padding: 0;
+  }
 }
 
 .link-area div {

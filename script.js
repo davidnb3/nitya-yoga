@@ -49,6 +49,19 @@ for (let i = 0; i < dropDownLink.length; i++) {
 
 
 
+// Responsive menu when clicking nav-icon
+
+function addResponsiveClass() {
+    let nav = document.getElementById('nav');
+    if (nav.className === 'desktop-nav') {
+        nav.className += ' responsive';
+    } else {
+        nav.className = 'desktop-nav';
+    }
+}
+
+
+
 // Navigation 'Thank you for subscribing' message
 
 subscribeForm.addEventListener('submit', function() {
